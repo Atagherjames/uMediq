@@ -1,50 +1,90 @@
-# Welcome to your Expo app 👋
+# uMediq – Smart Telemedicine for Nigerians 🇳🇬💡
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**uMediq** is a sleek, AI-powered telemedicine platform built to **connect patients and doctors across Nigeria**, with full support for **Nigerian accents and local culture**. We’re redefining digital healthcare — simple, fast, and deeply local.
 
-## Get started
+---
 
-1. Install dependencies
+## 🌍 Overview
 
-   ```bash
-   npm install
-   ```
+Healthcare in Nigeria is evolving, and **uMediq** is at the forefront. Our mission is to **bridge the healthcare gap** by leveraging cutting-edge technology and AI, designed with Nigerians in mind.
 
-2. Start the app
+- Instant access to licensed doctors from anywhere.
+- AI-powered voice recognition optimized for Nigerian accents.
+- Real-time consultations and personalized care.
+- A smooth, mobile-first experience.
 
-   ```bash
-    npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🚀 Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- 📞 **Real-Time Video/Audio Consultations**  
+  See a doctor within minutes — no waiting rooms, no hassle.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- 🤖 **AI Voice Assistant (Naija-tuned)**  
+  Speak naturally. uMediq understands the way Nigerians talk — no need to "fake an accent".
 
-## Get a fresh project
+- 📅 **Smart Appointment Booking**  
+  Schedule, reschedule, and get reminders all in-app.
 
-When you're ready, run:
+- 💊 **E-Prescriptions & Records**  
+  Digital prescriptions and secure access to your medical history.
 
-```bash
-npm run reset-project
-```
+- 🔐 **Data Security First**  
+  Encrypted storage, end-to-end video calls, and full HIPAA compliance in progress.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🧠 AI Capabilities
 
-To learn more about developing your project with Expo, look at the following resources:
+- Accent-aware speech-to-text using custom AI models
+- AI-driven symptom checker
+- Contextual chat assistant trained on Nigerian health FAQs
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 📱 Tech Stack
 
-Join our community of developers creating universal apps.
+- **Mobile App:** React Native (Expo)
+- **Backend:** Node.js / Express
+- **AI:** GPT Model /
+- **Database:** / MongoDB / Firebase
+- **Video Integration:** WebRTC / Twilio / Daily.co
+- **Authentication:** Firebase Auth / JWT / Laravel Sanctum
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 📈 Our Vision
+
+We believe **every Nigerian deserves access to quality healthcare**, regardless of location or language. uMediq is committed to:
+
+- Reducing wait times
+- Supporting local dialects and accents
+- Improving doctor-patient relationships through technology
+
+---
+
+## 📩 Contact
+
+**CEO & Founder:** Atagher James
+**Email:** [jamesatagher@gmail.com](mailto:jamesatagher@gmail.com)  
+**Phone:** [+234 808 467 9823](tel:+2348084679823)
+
+---
+
+## 📌 Project Status
+
+> 🚧 **In Development**  
+> We're currently building MVP features and integrating AI voice capabilities. Looking for collaborators, testers, and early-stage investors.
+
+---
+
+## 🤝 Contribute to uMediq
+
+We welcome contributions from:
+
+- Healthcare Professionals
+- UX Designers
+
+Reach out if you’re passionate about changing healthcare in Nigeria!
+
+---
