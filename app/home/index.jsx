@@ -1,0 +1,78 @@
+import React, { useState, useEffect } from "react";
+import {
+  View,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Alert,
+  Text,
+} from "react-native";
+import Header from "../../components/Header";
+import ScreenWrapper from "../../shared/ScreenWrapper";
+import InfoCard from "../../shared/InfoCard/InfoCard";
+import ABHACard from "../../components/AbhaCard";
+import FeedCard from "../../shared/FeedCard";
+import { FEED_DATA } from "../../data/datas";
+import styles from "./styles";
+
+const Index = ({ navigation }) => {
+  const points = [
+    "Your records are secure.",
+    "Store your records at one place.",
+    "Privacy enabled.",
+  ];
+  const points2 = [
+    "Save time in long queue.",
+    "Book appointments instantly with QR scanner.",
+  ];
+
+  return (
+    <ScreenWrapper>
+      <Header />
+      <ScrollView
+        contentContainerStyle={styles.scrollContent}
+        overScrollMode="auto"
+        indicatorStyle="white"
+        style={
+          Platform.OS === "ios" ? { flex: 1, backgroundColor: "#fff" } : {}
+        }
+      >
+        <View style={styles.content}>
+          <ABHACard
+            onPress={() => Alert.alert("Create ABHA Button Pressed!")}
+          />
+          <View style={styles.infoCard}>
+            <InfoCard
+              title="Diagnostics"
+              subtitle="Book Tests & Check-ups"
+              image={require("../../assets/images/icon.png")}
+              backgroundColor="#FDECF5"
+            />
+
+            <InfoCard
+              title="Pharma"
+              subtitle="Order Medicines Online"
+              image={require("../../assets/images/icon.png")}
+              backgroundColor="#E6F8F8"
+            />
+          </View>
+
+          <View>
+            <Text style={styles.title}>Health articles</Text>
+            {FEED_DATA.map((item) => (
+              <FeedCard
+                key={item.id}
+                imageSource={item.imageSource}
+                title={item.title}
+                author={item.author}
+                date={item.date}
+              />
+            ))}
+          </View>
+        </View>
+      </ScrollView>
+    </ScreenWrapper>
+  );
+};
+
+export default Index;
