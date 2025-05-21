@@ -22,9 +22,8 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 12,
-    color: "#555",
-    marginLeft: 40,
-    color: "#44B092",
+    color: "#1E3A8A",
+    marginLeft: 10,
   },
   textContainer: {
     alignItems: "flex-start",

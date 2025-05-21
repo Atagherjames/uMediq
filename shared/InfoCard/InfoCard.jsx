@@ -1,5 +1,4 @@
-import { View, Text, Image, StyleSheet } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
+import { View, Text, Image } from "react-native";
 
 import styles from "./styles";
 const InfoCard = ({ title, subtitle, image, backgroundColor }) => {

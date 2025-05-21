@@ -12,17 +12,11 @@ const Header = () => {
     <View style={styles.headerContainer}>
       <View style={styles.profileSection}>
         <Image
-          source={require("../../assets/images/icon.png")}
+          source={require("../../assets/images/Headache-amico.png")}
           style={styles.profileImage}
         />
         <TouchableOpacity style={styles.userNameSection}>
-          <Text style={styles.userName}>Jane Doe</Text>
-          <Ionicons
-            name="chevron-down"
-            size={20}
-            color="#333"
-            style={styles.dropdownIcon}
-          />
+          <Text style={styles.userName}>Atagher James</Text>
         </TouchableOpacity>
       </View>
 

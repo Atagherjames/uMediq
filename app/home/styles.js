@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
 
   infoCard: {
     display: "flex",
+    marginTop: 15,
     flexDirection: "row",
     alignItems: "center",
 

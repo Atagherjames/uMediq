@@ -22,7 +22,7 @@ import { useRouter } from "expo-router";
 import { menuData } from "../../data/datas";
 const Index = () => {
   const [shareModalVisible, setShareModalVisible] = useState(false);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const { selectedProfile, user } = useSelector((state) => state.auth);
   const router = useRouter();
   const shareLink = "https://example.com/user-profile";

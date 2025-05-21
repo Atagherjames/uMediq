@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 
-const ABHACard = ({ onPress }) => {
+const WelcomeCard = ({ onPress }) => {
   return (
     <TouchableOpacity
       style={[styles.cardContainer, styles.blueCard]}
@@ -22,4 +22,4 @@ const ABHACard = ({ onPress }) => {
   );
 };
 
-export default ABHACard;
+export default WelcomeCard;

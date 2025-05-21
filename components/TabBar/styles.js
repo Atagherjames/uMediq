@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   activeTabItem: {
-    borderColor: "#00DEC4",
+    borderColor: "#4F75C1",
   },
   tabText: {
     fontSize: 10,
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   activeTabText: {
-    color: "#00DEC4",
+    color: "#4F75C1",
   },
 });
 export default styles;

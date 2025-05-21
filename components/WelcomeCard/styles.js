@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   },
 
   blueCard: {
-    backgroundColor: "#103B82",
+    backgroundColor: "#4F75C1",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",

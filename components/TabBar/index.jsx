@@ -10,7 +10,7 @@ const TabBar = () => {
 
   const tabs = [
     { name: "home", icon: "home-outline", label: "Home" },
-    { name: "abha", icon: "id-card-outline", label: "ABHA" },
+    { name: "consult", icon: "medkit-outline", label: "Consult" },
     { name: "records", icon: "document-text-outline", label: "Records" },
     { name: "profile", icon: "person-outline", label: "Profile" },
   ];
@@ -34,7 +34,7 @@ const TabBar = () => {
           <Ionicons
             name={tab.icon}
             size={24}
-            color={activeTab === tab.name ? "#00DEC4" : "#000"}
+            color={activeTab === tab.name ? "#4F75C1" : "#000"}
           />
           <Text
             style={[

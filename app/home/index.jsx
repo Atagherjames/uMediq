@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {
-  View,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Alert,
-  Text,
-} from "react-native";
+import { View, Platform, ScrollView, Alert, Text } from "react-native";
 import Header from "../../components/Header";
 import ScreenWrapper from "../../shared/ScreenWrapper";
 import InfoCard from "../../shared/InfoCard/InfoCard";
-import ABHACard from "../../components/AbhaCard";
+import WelcomeCard from "../../components/WelcomeCard";
+import UploadBanner from "../../components/UploadBanner/UploadBanner";
 import FeedCard from "../../shared/FeedCard";
 import { FEED_DATA } from "../../data/datas";
 import styles from "./styles";
@@ -38,24 +32,26 @@ const Index = ({ navigation }) => {
         }
       >
         <View style={styles.content}>
-          <ABHACard
+          <WelcomeCard
             onPress={() => Alert.alert("Create ABHA Button Pressed!")}
           />
           <View style={styles.infoCard}>
             <InfoCard
               title="Diagnostics"
               subtitle="Book Tests & Check-ups"
-              image={require("../../assets/images/icon.png")}
+              image={require("../../assets/images/blood-test.png")}
               backgroundColor="#FDECF5"
             />
 
             <InfoCard
               title="Pharma"
               subtitle="Order Medicines Online"
-              image={require("../../assets/images/icon.png")}
+              image={require("../../assets/images/drugs.png")}
               backgroundColor="#E6F8F8"
             />
           </View>
+
+          <UploadBanner />
 
           <View>
             <Text style={styles.title}>Health articles</Text>

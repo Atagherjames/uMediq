@@ -17,6 +17,7 @@ import Animated, {
   withSequence,
 } from "react-native-reanimated";
 import AnimatedSplashScreen from "../components/SplashScreen";
+import { saveItem, getItem } from "../services/storageHelpers";
 import ScreenWrapper from "../shared/ScreenWrapper";
 import Svg, { Path } from "react-native-svg";
 import Button from "../shared/Button";
@@ -57,7 +58,11 @@ const Index = () => {
   useEffect(() => {
     async function prepareApp() {
       await new Promise((resolve) => setTimeout(resolve, 3500));
+      const onboarded = getItem("hasOnboarded");
       setAppIsReady(true);
+      if (onboarded === "true") {
+        router.replace("/login");
+      }
     }
     prepareApp();
   }, []);
@@ -68,7 +73,8 @@ const Index = () => {
 
   const handleNext = () => {
     if (currentIndex === carouselData.length - 1) {
-      router.replace("login");
+      saveItem("hasOnboarded", "true");
+      router.replace("/login");
     } else {
       setCurrentIndex((prevIndex) =>
         prevIndex === carouselData.length - 1 ? 0 : prevIndex + 1

@@ -1,52 +1,29 @@
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
-export const LOGIN_OPTIONS = [
-  {
-    id: "mobile",
-    label: "Login using Mobile number",
-    placeholder: "e.g. 623 456 7890",
-    keyboardType: "phone-pad",
-  },
-  {
-    id: "abha",
-    label: "Login using your ABHA number",
-    placeholder: "e.g. 1234567890",
-  },
-  {
-    id: "abhaAddress",
-    label: "Login using your ABHA address",
-    placeholder: "e.g. abha@health.gov.in",
-  },
-  {
-    id: "email",
-    label: "Login using Email",
-    placeholder: "e.g. john.doe@example.com",
-    keyboardType: "email-address",
-  },
-];
 
 export const FEED_DATA = [
   {
     id: 1,
-    imageSource: require("../assets/images/icon.png"),
-    title: "Prevent Hair-fall with the following remedies.",
-    author: "By Julia Roberts, Hair Specialist",
-    date: "11, May 23",
+    imageSource: require("../assets/images/Pediatrician-amico.png"),
+    title: "Keeping Medical Records Organized Digitally",
+    author: "By Dr. Lisa Raymond, Pediatric Specialist",
+    date: "14, May 23",
   },
   {
     id: 2,
-    imageSource: require("../assets/images/icon.png"),
-    title: "10 Foods to Boost Your Immunity.",
-    author: "By John Doe, Nutritionist",
-    date: "05, May 23",
+    imageSource: require("../assets/images/Orthopedic-amico.png"),
+    title: "Understanding Joint Pain & Treatment Options",
+    author: "By Dr. Mark Evans, Orthopedic Surgeon",
+    date: "10, May 23",
   },
   {
     id: 3,
-    imageSource: require("../assets/images/icon.png"),
-    title: "Yoga for a Stress-Free Life.",
-    author: "By Emma Watson, Yoga Expert",
-    date: "15, Apr 23",
+    imageSource: require("../assets/images/Artificial intelligence-amico.png"),
+    title: "AI in Healthcare: Revolutionizing Patient Care",
+    author: "By Dr. Nina Patel, Health Tech Researcher",
+    date: "03, May 23",
   },
 ];
+
 export const ACTIONS = [
   {
     icon: <MaterialIcons name="devices" size={30} color="#000" />,
