@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import styles from "./styles";
 import ScreenWrapper from "../../shared/ScreenWrapper";
 import { appointmentsData } from "../../data/datas";
@@ -8,7 +7,6 @@ import AppointmentCard from "../../components/AppointmentCard";
 import EmptyState from "../../shared/EmptyState";
 import IconHeader from "../../shared/IconHeader/IconHeader";
 const Index = () => {
-  const navigation = useNavigation();
   const [activeTab, setActiveTab] = useState("Upcoming");
 
   const renderContent = () => {

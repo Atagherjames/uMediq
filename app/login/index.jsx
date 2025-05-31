@@ -36,7 +36,7 @@ const Index = () => {
         style={styles.header}
       >
         <Image
-          source={require("../../assets/images/uMediq .png")}
+          source={require("../../assets/images/icon.png")}
           resizeMode="contain"
           style={styles.logo}
         />

@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#fff", paddingHorizontal: 16 },
-  header: { marginTop:8, flexDirection: "row", alignItems: "center" },
+  header: { marginTop: 8, flexDirection: "row", alignItems: "center" },
   headerText: { fontSize: 18, fontWeight: "bold", marginLeft: 8 },
   searchBar: {
     flexDirection: "row",
@@ -66,6 +66,10 @@ const styles = StyleSheet.create({
   noRecordsText: {
     fontSize: 16,
     color: "#777",
+  },
+  placeholderImage: {
+    width: 100,
+    height: 100,
   },
 });
 export default styles;

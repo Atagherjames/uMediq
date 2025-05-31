@@ -1,12 +1,12 @@
 import { Stack, useSegments } from "expo-router";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import TabBar from "../components/TabBar";
 import { screens } from "../data/datas";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { StyleSheet } from "react-native";
 
 const _layout = () => {
   const segments = useSegments();
-  console.log("Current Segments:", segments);
-
   const routesWithTabBar = ["home", "records", "appointment", "profile"];
   const currentRoute = segments[0] || "";
 
@@ -15,7 +15,7 @@ const _layout = () => {
   const queryClient = new QueryClient();
 
   return (
-    <>
+    <GestureHandlerRootView style={styles.root}>
       <QueryClientProvider client={queryClient}>
         <Stack screenOptions={{ headerShown: false }}>
           {screens.map(({ name, options }) => (
@@ -24,8 +24,14 @@ const _layout = () => {
         </Stack>
         {shouldShowTabBar && <TabBar />}
       </QueryClientProvider>
-    </>
+    </GestureHandlerRootView>
   );
 };
+
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+  },
+});
 
 export default _layout;

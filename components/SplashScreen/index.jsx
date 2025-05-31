@@ -28,7 +28,7 @@ export default function AnimatedSplashScreen() {
     <LinearGradient colors={["#FFFFFF", "#4A90E2"]} style={styles.container}>
       <Animated.View style={[styles.logoContainer, { opacity }]}>
         <Image
-          source={require("../../assets/images/uMediq .png")}
+          source={require("../../assets/images/icon.png")}
           style={styles.logo}
         />
         <View style={styles.textContainer}>

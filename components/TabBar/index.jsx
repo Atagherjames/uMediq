@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router/build";
@@ -12,6 +12,11 @@ const TabBar = () => {
     { name: "home", icon: "home-outline", label: "Home" },
     { name: "consult", icon: "medkit-outline", label: "Consult" },
     { name: "records", icon: "document-text-outline", label: "Records" },
+    {
+      name: "uMediq-ai",
+      icon: "chatbubble-ellipses-outline",
+      label: "AI",
+    },
     { name: "profile", icon: "person-outline", label: "Profile" },
   ];
 

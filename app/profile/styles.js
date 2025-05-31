@@ -154,6 +154,7 @@ const styles = StyleSheet.create({
   footerText: {
     textAlign: "center",
     marginTop: 30,
+    marginBottom: 20,
     color: "#888",
   },
   modalOverlay: {

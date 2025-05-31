@@ -61,7 +61,7 @@ const Index = () => {
       const onboarded = getItem("hasOnboarded");
       setAppIsReady(true);
       if (onboarded === "true") {
-        router.replace("/login");
+        router.replace("/onboard");
       }
     }
     prepareApp();
@@ -74,7 +74,7 @@ const Index = () => {
   const handleNext = () => {
     if (currentIndex === carouselData.length - 1) {
       saveItem("hasOnboarded", "true");
-      router.replace("/login");
+      router.replace("/onboard");
     } else {
       setCurrentIndex((prevIndex) =>
         prevIndex === carouselData.length - 1 ? 0 : prevIndex + 1

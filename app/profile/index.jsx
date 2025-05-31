@@ -15,15 +15,10 @@ import ScreenWrapper from "../../shared/ScreenWrapper";
 import * as Clipboard from "expo-clipboard";
 import styles from "./styles";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-// import { logoutUser } from "../../Redux/actions/authActions";
-import { useSelector, useDispatch } from "react-redux";
-// import { selectProfile } from "../../Redux/actions/authActions";
 import { useRouter } from "expo-router";
 import { menuData } from "../../data/datas";
 const Index = () => {
   const [shareModalVisible, setShareModalVisible] = useState(false);
-  // const dispatch = useDispatch();
-  // const { selectedProfile, user } = useSelector((state) => state.auth);
   const router = useRouter();
   const shareLink = "https://example.com/user-profile";
   const [showDetails, setShowDetails] = useState(false);
@@ -51,8 +46,7 @@ const Index = () => {
 
   const confirmLogout = () => {
     setLogoutModalVisible(false);
-    // logoutUser();
-    router.replace("/login");
+    router.replace("/onboard");
   };
   const handleCopyLink = () => {
     Clipboard.setStringAsync(shareLink);
@@ -225,7 +219,10 @@ const Index = () => {
             </View>
           ))}
         </View>
-        <Text style={styles.footerText}>HT@2023copyright</Text>
+        <Text style={styles.footerText}>
+          &copy; 2025 uMediq. All rights reserved.
+        </Text>
+
         <Modal
           transparent={true}
           animationType="slide"
