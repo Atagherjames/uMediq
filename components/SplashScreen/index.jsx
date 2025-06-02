@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react";
-import { View, Text, Image, Animated } from "react-native";
+import { useEffect } from "react";
+import { Image, Animated } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import TypeWriter from "react-native-typewriter";
 import styles from "./styles";
 
 export default function AnimatedSplashScreen() {
   const opacity = new Animated.Value(0);
-  const [textVisible, setTextVisible] = useState(false);
-  const [subtitleVisible, setSubtitleVisible] = useState(false);
 
   useEffect(() => {
     Animated.timing(opacity, {
@@ -15,13 +12,6 @@ export default function AnimatedSplashScreen() {
       duration: 1000,
       useNativeDriver: true,
     }).start();
-
-    setTimeout(() => {
-      setTextVisible(true);
-      setTimeout(() => {
-        setSubtitleVisible(true);
-      }, 1500);
-    }, 1000);
   }, []);
 
   return (
@@ -31,16 +21,6 @@ export default function AnimatedSplashScreen() {
           source={require("../../assets/images/icon.png")}
           style={styles.logo}
         />
-        <View style={styles.textContainer}>
-          {textVisible && (
-            <TypeWriter style={styles.text} typing={1}>
-              uMediq
-            </TypeWriter>
-          )}
-          {subtitleVisible && (
-            <Text style={styles.subtitle}>Your Health, Anytime, Anywhere</Text>
-          )}
-        </View>
       </Animated.View>
     </LinearGradient>
   );

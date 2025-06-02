@@ -283,3 +283,28 @@ export const consentRejectData = [
     rejectedOn: " 27 Jul, 2024",
   },
 ];
+
+export const specialties = [
+  "General",
+  "Cardiologist",
+  "Dermatologist",
+  "Neurologist",
+  "Orthopedic",
+  "Pediatrician",
+  "Psychiatrist",
+  "Oncologist",
+  "ENT",
+  "Gynecologist",
+  "Ophthalmologist",
+  "Urologist",
+  "Pulmonologist",
+  "Endocrinologist",
+  "Nephrologist",
+  "Dentist",
+  "Physiotherapist",
+  "Chiropractor",
+  "Nutritionist",
+  "Psychologist",
+  "Speech Therapist",
+  "Occupational Therapist",
+];

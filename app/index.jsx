@@ -60,6 +60,7 @@ const Index = () => {
       await new Promise((resolve) => setTimeout(resolve, 3500));
       const onboarded = getItem("hasOnboarded");
       setAppIsReady(true);
+      router.replace();
       if (onboarded === "true") {
         router.replace("/onboard");
       }

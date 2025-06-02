@@ -14,7 +14,7 @@ import { useRouter } from "expo-router";
 import styles from "./style";
 
 const backgroundConfigs = [
-  { color: "#00695C", text: "uMediq Care", textColor: "#ffffff" },
+  { color: "#00695C", text: "uMediq", textColor: "#FDECF5" },
   { color: "#4A90E2", text: "Smart Health", textColor: "#ffffff" },
   { color: "#E0F7FA", text: "Doctor Connect", textColor: "#EC407A" },
 ];
