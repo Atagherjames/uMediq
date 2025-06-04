@@ -60,9 +60,9 @@ const Index = () => {
       await new Promise((resolve) => setTimeout(resolve, 3500));
       const onboarded = getItem("hasOnboarded");
       setAppIsReady(true);
-      router.replace();
+
       if (onboarded === "true") {
-        router.replace("/onboard");
+        router.replace("onboard");
       }
     }
     prepareApp();
@@ -75,7 +75,7 @@ const Index = () => {
   const handleNext = () => {
     if (currentIndex === carouselData.length - 1) {
       saveItem("hasOnboarded", "true");
-      router.replace("/onboard");
+      router.replace("onboard");
     } else {
       setCurrentIndex((prevIndex) =>
         prevIndex === carouselData.length - 1 ? 0 : prevIndex + 1

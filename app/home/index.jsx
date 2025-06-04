@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { View, Platform, ScrollView, Alert, Text } from "react-native";
 import Header from "../../components/Header";
 import ScreenWrapper from "../../shared/ScreenWrapper";
@@ -10,16 +9,6 @@ import { FEED_DATA } from "../../data/datas";
 import styles from "./styles";
 
 const Index = ({ navigation }) => {
-  const points = [
-    "Your records are secure.",
-    "Store your records at one place.",
-    "Privacy enabled.",
-  ];
-  const points2 = [
-    "Save time in long queue.",
-    "Book appointments instantly with QR scanner.",
-  ];
-
   return (
     <ScreenWrapper>
       <Header />
@@ -32,9 +21,7 @@ const Index = ({ navigation }) => {
         }
       >
         <View style={styles.content}>
-          <WelcomeCard
-            onPress={() => Alert.alert("Create ABHA Button Pressed!")}
-          />
+          <WelcomeCard onPress={() => Alert.alert("Welcom to uMediq Store!")} />
           <View style={styles.infoCard}>
             <InfoCard
               title="Diagnostics"

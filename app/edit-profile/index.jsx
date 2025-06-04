@@ -4,7 +4,6 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  StyleSheet,
   Image,
   ScrollView,
   KeyboardAvoidingView,
@@ -95,20 +94,6 @@ const CreateProfileScreen = () => {
               onChangeText={setLastName}
             />
           </View>
-
-          <View style={styles.inputContainer}>
-            <Text style={styles.label}>Age</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Age"
-              placeholderTextColor="#aaa"
-              keyboardType="numeric"
-              value={age}
-              onChangeText={setAge}
-            />
-          </View>
-
-          <Text style={styles.orText}>Or</Text>
 
           <View style={styles.inputContainer}>
             <Text style={styles.label}>Birth Date</Text>

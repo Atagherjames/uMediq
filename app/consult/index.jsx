@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from "react-native";
-import { Ionicons, Feather, MaterialIcons } from "@expo/vector-icons";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import styles from "./styles";
 import ScreenWrapper from "../../shared/ScreenWrapper";
 import DoctorCard from "../../components/DoctorCard";
@@ -56,7 +56,7 @@ const Index = () => {
       ></IconHeader>
 
       <View style={styles.searchWrapper}>
-        <Ionicons name="search" size={20} color="#666" />
+        <Ionicons name="search" size={20} />
         <TextInput
           placeholder="Search doctors by name and specialty"
           style={styles.searchInput}

@@ -14,9 +14,11 @@ const styles = StyleSheet.create({
   },
   searchWrapper: {
     flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#eaf3fb",
     borderRadius: 25,
-    paddingHorizontal: 10,
-    paddingVertical: 10,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
     marginBottom: 16,
 
     shadowColor: "#000",
@@ -28,10 +30,17 @@ const styles = StyleSheet.create({
   searchInput: {
     marginLeft: 10,
     flex: 1,
-    fontSize: 16,
-    color: "#333",
-    paddingVertical: 0,
+    fontSize: 14,
+    lineHeight: 18,
+    color: "#1a1a1a",
+    fontWeight: "500",
+    height: 30,
+    paddingTop: 6,
+    paddingBottom: 0,
+    includeFontPadding: false,
+    textAlignVertical: "center",
   },
+
   filterRow: {
     flexDirection: "row",
     marginBottom: 20,

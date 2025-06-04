@@ -2,8 +2,10 @@ import { useState } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 const DoctorCard = ({ item, onPressDetail }) => {
+  const router = useRouter();
   const [liked, setLiked] = useState(false);
 
   return (
@@ -34,7 +36,7 @@ const DoctorCard = ({ item, onPressDetail }) => {
 
       <View style={styles.actionSection}>
         <TouchableOpacity
-          onPress={() => onPressDetail(item)}
+          onPress={() => router.replace("consult/123")}
           style={styles.viewDetailsButton}
         >
           <Text style={styles.viewDetailsText}>View Profile</Text>
