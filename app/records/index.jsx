@@ -221,7 +221,9 @@ const RecordsScreen = () => {
         {filteredRecords.length === 0 ? (
           <View style={styles.emptyState}>
             <Image
-              source={require("../../assets/images/icon.png")}
+              source={{
+                uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208344/pescription_xwfzus.png",
+              }}
               resizeMode="contain"
               style={styles.placeholderImage}
             />

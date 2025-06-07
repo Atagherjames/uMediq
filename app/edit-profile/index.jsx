@@ -47,7 +47,7 @@ const CreateProfileScreen = () => {
 
   const handleNavigate = () => {
     if (isFormComplete) {
-      router.push("home");
+      router.push("toast-message");
     }
   };
 
@@ -58,7 +58,7 @@ const CreateProfileScreen = () => {
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <ScrollView contentContainerStyle={styles.container}>
-          <Text style={styles.title}>Edit your Profile</Text>
+          <Text style={styles.title}>Complete Profile</Text>
 
           <TouchableOpacity style={styles.imageContainer} onPress={pickImage}>
             {profileImage ? (

@@ -12,11 +12,13 @@ const Header = () => {
     <View style={styles.headerContainer}>
       <View style={styles.profileSection}>
         <Image
-          source={require("../../assets/images/Headache-amico.png")}
+          source={{
+            uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208341/Headache-amico_lyebud.png",
+          }}
           style={styles.profileImage}
         />
         <TouchableOpacity style={styles.userNameSection}>
-          <Text style={styles.userName}>Atagher James</Text>
+          <Text style={styles.userName}>Difference</Text>
         </TouchableOpacity>
       </View>
 

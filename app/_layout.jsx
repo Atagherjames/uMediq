@@ -3,6 +3,8 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import TabBar from "../components/TabBar";
 import { screens } from "../data/datas";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { RootSiblingParent } from "react-native-root-siblings";
+import queryClient from "../services/queryClient";
 import { StyleSheet } from "react-native";
 
 const _layout = () => {
@@ -12,17 +14,17 @@ const _layout = () => {
 
   const shouldShowTabBar = routesWithTabBar.includes(currentRoute);
 
-  const queryClient = new QueryClient();
-
   return (
     <GestureHandlerRootView style={styles.root}>
       <QueryClientProvider client={queryClient}>
-        <Stack screenOptions={{ headerShown: false }}>
-          {screens.map(({ name, options }) => (
-            <Stack.Screen key={name} name={name} options={options} />
-          ))}
-        </Stack>
-        {shouldShowTabBar && <TabBar />}
+        <RootSiblingParent>
+          <Stack screenOptions={{ headerShown: false }}>
+            {screens.map(({ name, options }) => (
+              <Stack.Screen key={name} name={name} options={options} />
+            ))}
+          </Stack>
+          {shouldShowTabBar && <TabBar />}
+        </RootSiblingParent>
       </QueryClientProvider>
     </GestureHandlerRootView>
   );

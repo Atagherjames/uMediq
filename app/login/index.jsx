@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   View,
   Text,
@@ -10,9 +10,35 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import Spinner from "react-native-loading-spinner-overlay";
+import Toast from "react-native-root-toast";
 
 import ScreenWrapper from "../../shared/ScreenWrapper";
 import styles from "./styles";
+import { useLogin } from "../../features/user/userQeuries";
+
+const showErrorToast = (message) => {
+  Toast.show(message, {
+    duration: Toast.durations.LONG,
+    position: Toast.positions.CENTER,
+    shadow: true,
+    animation: true,
+    hideOnPress: true,
+    backgroundColor: "rgba(255, 76, 76, 0.95)",
+    textColor: "#fff",
+    containerStyle: {
+      borderRadius: 12,
+      padding: 16,
+      marginHorizontal: 30,
+      elevation: 10,
+    },
+    textStyle: {
+      fontSize: 16,
+      fontWeight: "600",
+      textAlign: "center",
+    },
+  });
+};
 
 const Index = () => {
   const router = useRouter();
@@ -20,17 +46,21 @@ const Index = () => {
   const [password, setPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [focusedInput, setFocusedInput] = useState(null);
-  const [login, setLogin] = useState(false);
 
-  useEffect(() => {
-    if (login) {
-      router.push("otp");
-      setLogin(false);
-    }
-  }, [login]);
+  const { mutate: loginUser, isPending } = useLogin(
+    () => router.replace("home"),
+    (error) => showErrorToast(`Wrong Email or Password`)
+  );
 
   return (
     <ScreenWrapper>
+      <Spinner
+        visible={isPending}
+        color="#4F75C1"
+        overlayColor="rgba(0, 0, 0, 0.6)"
+        textStyle={{ color: "#fff", fontWeight: "500" }}
+      />
+
       <LinearGradient
         colors={["#ffffff", "#BFDFFF7A", "#ffffff"]}
         style={styles.header}
@@ -48,24 +78,25 @@ const Index = () => {
         </View>
 
         <View style={styles.loginContainer}>
-          {/* Email or Phone Input */}
+          {/* Email */}
           <View style={styles.inputContainer}>
             <TextInput
               style={[
                 styles.input,
                 focusedInput === "email" && styles.inputFocused,
               ]}
-              placeholder="Email or Phone Number"
+              placeholder="Email"
               keyboardType="email-address"
               value={email}
               onChangeText={setEmail}
               onFocus={() => setFocusedInput("email")}
               onBlur={() => setFocusedInput(null)}
               placeholderTextColor="#666"
+              autoCapitalize="none"
             />
           </View>
 
-          {/* Password Input with Toggle */}
+          {/* Password */}
           <View style={styles.inputContainer}>
             <View style={styles.passwordWrapper}>
               <TextInput
@@ -97,8 +128,14 @@ const Index = () => {
 
           {/* Login Button */}
           <View style={styles.inputContainer}>
-            <TouchableOpacity style={styles.btn} onPress={() => setLogin(true)}>
-              <Text style={styles.text1}>Login</Text>
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => loginUser({ email, password })}
+              disabled={isPending}
+            >
+              <Text style={styles.text1}>
+                {isPending ? "Logging in..." : "Login"}
+              </Text>
             </TouchableOpacity>
           </View>
 

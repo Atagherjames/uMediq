@@ -92,7 +92,7 @@ const Index = () => {
             style={styles.addImageCard}
             title={"Add more images"}
             icon2={"add-circle"}
-            color="#00DEC4"
+            color="#4F75C1"
             size={50}
             onPress={addMoreImages}
           />
@@ -125,12 +125,14 @@ const Index = () => {
         />
         <View style={styles.checkboxContainer}>
           <CustomCheckBox value={linkRecord} onValueChange={setLinkRecord} />
-          <Text style={styles.checkboxLabel}>Link record to Janedoe@abdm</Text>
+          <Text style={styles.checkboxLabel}>
+            Link record to test@gmail.com
+          </Text>
         </View>
         <Button
           style={[
             styles.addRecordButton,
-            { backgroundColor: addButtonEnabled ? "#00DEC4" : "#ccc" },
+            { backgroundColor: addButtonEnabled ? "#4F75C1" : "#ccc" },
           ]}
           textStyle={styles.addRecordButtonText}
           title={"Add Record"}
@@ -185,5 +187,3 @@ const Index = () => {
 };
 
 export default Index;
-
-

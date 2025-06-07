@@ -14,7 +14,9 @@ const WelcomeCard = ({ onPress }) => {
         </Text>
       </View>
       <Image
-        source={require("../../assets/images/Pediatrician-amico.png")}
+        source={{
+          uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208340/Pediatrician-amico_pjkywp.png",
+        }}
         style={styles.image}
         resizeMode="contain"
       />

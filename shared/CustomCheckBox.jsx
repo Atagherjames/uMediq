@@ -11,7 +11,7 @@ export const CustomCheckBox = ({ value, onValueChange }) => (
       borderRadius: 4,
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: value ? "#00DEC4" : "#fff",
+      backgroundColor: value ? "#4F75C1" : "#fff",
     }}
     onPress={() => onValueChange(!value)}
   >

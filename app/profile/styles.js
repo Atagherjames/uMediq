@@ -111,12 +111,7 @@ const styles = StyleSheet.create({
   },
 
   verifyButton: {
-    backgroundColor: "#00E0C6",
-  },
-  switchText: {
-    color: "#000",
-    textAlign: "center",
-    fontWeight: "bold",
+    backgroundColor: "#4F75C1",
   },
   verifyText: {
     color: "#fff",
@@ -224,7 +219,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   confirmButton: {
-    backgroundColor: "#00E0C0",
+    backgroundColor: "#4F75C1",
     padding: 12,
     borderRadius: 8,
     width: "45%",

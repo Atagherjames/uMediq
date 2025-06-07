@@ -103,7 +103,10 @@ const Index = () => {
         </View>
 
         <View style={styles.bottomContainer}>
-          <TouchableOpacity style={[styles.button, styles.googleButton]}>
+          <TouchableOpacity
+            style={[styles.button, styles.googleButton]}
+            onPress={() => route.push("/login")}
+          >
             <View style={styles.buttonContent}>
               <Ionicons name="logo-google" style={styles.googleIcon} />
               <Text style={[styles.buttonText, styles.googleButtonText]}>

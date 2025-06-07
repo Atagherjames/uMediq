@@ -6,9 +6,11 @@ import WelcomeCard from "../../components/WelcomeCard";
 import UploadBanner from "../../components/UploadBanner/UploadBanner";
 import FeedCard from "../../shared/FeedCard";
 import { FEED_DATA } from "../../data/datas";
+import { useRouter } from "expo-router";
 import styles from "./styles";
 
 const Index = ({ navigation }) => {
+  const router = useRouter();
   return (
     <ScreenWrapper>
       <Header />
@@ -21,19 +23,23 @@ const Index = ({ navigation }) => {
         }
       >
         <View style={styles.content}>
-          <WelcomeCard onPress={() => Alert.alert("Welcom to uMediq Store!")} />
+          <WelcomeCard onPress={() => router.push("consult")} />
           <View style={styles.infoCard}>
             <InfoCard
               title="Diagnostics"
               subtitle="Book Tests & Check-ups"
-              image={require("../../assets/images/blood-test.png")}
+              image={{
+                uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208338/blood-test_e7qxs3.png",
+              }}
               backgroundColor="#FDECF5"
             />
 
             <InfoCard
               title="Pharma"
               subtitle="Order Medicines Online"
-              image={require("../../assets/images/drugs.png")}
+              image={{
+                uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208339/drugs_x4qtml.png",
+              }}
               backgroundColor="#E6F8F8"
             />
           </View>

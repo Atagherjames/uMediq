@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   recordActions: { flexDirection: "row", alignItems: "center" },
   actionIcon: { marginLeft: 15 },
   fab: {
-    backgroundColor: "#00C4B4",
+    backgroundColor: "#4F75C1",
     width: 60,
     height: 60,
     borderRadius: 30,

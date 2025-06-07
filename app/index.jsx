@@ -19,35 +19,48 @@ import Animated, {
 import AnimatedSplashScreen from "../components/SplashScreen";
 import { saveItem, getItem } from "../services/storageHelpers";
 import ScreenWrapper from "../shared/ScreenWrapper";
+import { useAuthStatus } from "../features/user/userQeuries";
 import Svg, { Path } from "react-native-svg";
 import Button from "../shared/Button";
 import { useRouter } from "expo-router";
+import { SplashScreen as ExpoSplashScreen } from "expo-router";
 
 const { width } = Dimensions.get("window");
 
+ExpoSplashScreen.preventAutoHideAsync();
+
 const Index = () => {
-  const [appIsReady, setAppIsReady] = useState(false);
+  const [initialLoadingComplete, setInitialLoadingComplete] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const translateX = useSharedValue(0);
   const router = useRouter();
 
+  const { data: authUser, isFetched: isAuthFetched } = useAuthStatus();
+  const isAuthenticated = !!authUser;
+
   const carouselData = [
     {
-      image: require("../assets/images/Orthopedic-amico.png"),
+      image: {
+        uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208343/Orthopedic-amico_fbs4zv.png",
+      },
       mainText: "Consult Your Doctor",
       description:
         "Not feeling well? Open the app and start a remote consultation — no delays, no hassle.",
       pathData: " ",
     },
     {
-      image: require("../assets/images/Pharmacist-amico.png"),
+      image: {
+        uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208340/Pharmacist-amico_ikzdxq.png",
+      },
       mainText: "Order Medicines",
       description:
         "Easily order drugs from nearby pharmacies and get them delivered to you.",
       pathData: " ",
     },
     {
-      image: require("../assets/images/Artificial intelligence-amico.png"),
+      image: {
+        uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208340/Artificial_intelligence-amico_bzgejw.png",
+      },
       mainText: "Ask Your Health Questions",
       description:
         "Got health doubts? Ask our AI anytime and get instant, reliable answers.",
@@ -56,17 +69,37 @@ const Index = () => {
   ];
 
   useEffect(() => {
-    async function prepareApp() {
+    async function performInitialChecksAndNavigate() {
       await new Promise((resolve) => setTimeout(resolve, 3500));
-      const onboarded = getItem("hasOnboarded");
-      setAppIsReady(true);
 
-      if (onboarded === "true") {
+      if (!isAuthFetched) {
+        console.warn(
+          "Auth status not yet fetched after initial timeout. Waiting..."
+        );
+        return;
+      }
+
+      const onboarded = getItem("hasOnboarded");
+      const hasCompletedOnboarding = onboarded === "true";
+
+      ExpoSplashScreen.hideAsync();
+
+      if (isAuthenticated) {
+        console.log("User is authenticated. Redirecting to home screen.");
+        router.replace("home");
+      } else if (hasCompletedOnboarding) {
+        console.log(
+          "User has onboarded but not authenticated. Redirecting to onboard screen."
+        );
         router.replace("onboard");
+      } else {
+        console.log("User is new. Displaying onboarding carousel.");
+        setInitialLoadingComplete(true);
       }
     }
-    prepareApp();
-  }, []);
+
+    performInitialChecksAndNavigate();
+  }, [isAuthFetched, isAuthenticated]);
 
   useEffect(() => {
     translateX.value = withTiming(0, { duration: 300, easing: Easing.ease });
@@ -77,10 +110,7 @@ const Index = () => {
       saveItem("hasOnboarded", "true");
       router.replace("onboard");
     } else {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === carouselData.length - 1 ? 0 : prevIndex + 1
-      );
-
+      setCurrentIndex((prevIndex) => prevIndex + 1);
       translateX.value = withSequence(
         withTiming(width, { duration: 300, easing: Easing.ease }),
         withTiming(0, { duration: 300, easing: Easing.ease })
@@ -94,7 +124,7 @@ const Index = () => {
     };
   });
 
-  if (!appIsReady) {
+  if (!initialLoadingComplete) {
     return <AnimatedSplashScreen />;
   }
 
@@ -169,7 +199,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
   },
-
   illustrationContainer: {
     flex: 1,
     justifyContent: "center",

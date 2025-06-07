@@ -3,21 +3,27 @@ import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 export const FEED_DATA = [
   {
     id: 1,
-    imageSource: require("../assets/images/Pediatrician-amico.png"),
+    imageSource: {
+      uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208340/Pediatrician-amico_pjkywp.png",
+    },
     title: "Keeping Medical Records Organized Digitally",
     author: "By Dr. Lisa Raymond, Pediatric Specialist",
     date: "14, May 23",
   },
   {
     id: 2,
-    imageSource: require("../assets/images/Orthopedic-amico.png"),
+    imageSource: {
+      uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208343/Orthopedic-amico_fbs4zv.png",
+    },
     title: "Understanding Joint Pain & Treatment Options",
     author: "By Dr. Mark Evans, Orthopedic Surgeon",
     date: "10, May 23",
   },
   {
     id: 3,
-    imageSource: require("../assets/images/Artificial intelligence-amico.png"),
+    imageSource: {
+      uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208340/Artificial_intelligence-amico_bzgejw.png",
+    },
     title: "AI in Healthcare: Revolutionizing Patient Care",
     author: "By Dr. Nina Patel, Health Tech Researcher",
     date: "03, May 23",
@@ -69,22 +75,23 @@ export const categories = [
 ];
 export const menuData = [
   {
-    sectionLabel: "Profile",
-    items: [{ title: "Family Members", route: "/family" }],
-  },
-  {
     sectionLabel: "Resources",
     items: [
-      { title: "My Appointments", route: "/appointments" },
-      { title: "ABHA Settings", route: "/abha-settings" },
+      // { title: "My Appointments", route: "/appointments" },
+      { title: "My Appointments", route: "profile" },
+      // { title: "ABHA Settings", route: "/abha-settings" },
+      { title: "Profile Settings", route: "profile" },
     ],
   },
   {
     sectionLabel: "Others",
     items: [
-      { title: "Security & Privacy", route: "/security" },
-      { title: "Languages", route: "/languages" },
-      { title: "Support & Feedback", route: "/support" },
+      // { title: "Security & Privacy", route: "/security" },
+      { title: "Security & Privacy", route: "/profile" },
+      // { title: "Languages", route: "/languages" },
+      { title: "Languages", route: "profile" },
+      // { title: "Support & Feedback", route: "/support" },
+      { title: "Support & Feedback", route: "profile" },
       { title: "Logout", route: "logout" },
     ],
   },

@@ -1,11 +1,15 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
+import { useRouter } from "expo-router";
 
-const UploadBanner = ({ onPress }) => {
+const UploadBanner = () => {
+  const router = useRouter();
   return (
     <View style={[styles.cardContainer, styles.purpleCard]}>
       <Image
-        source={require("../../assets/images/pescription.png")}
+        source={{
+          uri: "https://res.cloudinary.com/dx0ll70so/image/upload/v1749208344/pescription_xwfzus.png",
+        }}
         style={styles.image}
         resizeMode="contain"
       />
@@ -14,7 +18,10 @@ const UploadBanner = ({ onPress }) => {
         <Text style={styles.subtitle}>Add reports & prescriptions</Text>
       </View>
 
-      <TouchableOpacity style={styles.uploadButton} onPress={onPress}>
+      <TouchableOpacity
+        style={styles.uploadButton}
+        onPress={() => router.push("add-record")}
+      >
         <Text style={styles.uploadButtonText}>Upload</Text>
       </TouchableOpacity>
     </View>

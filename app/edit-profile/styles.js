@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   genderButtonSelected: {
-    backgroundColor: "#00DEC4",
+    backgroundColor: "#4F75C1",
   },
   genderText: {
     fontSize: 16,
